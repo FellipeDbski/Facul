@@ -43,10 +43,15 @@ int altera(){
 	scanf(" %d", &codigo);
 	if (codigo >= 0 && codigo <= 100) {
 		printf("-------------------------------------------------------------- \n");
-		printf("Realizando uma ção no cadastro \n");
-		scanf(" %c", &dados[codigo].Nome);
-		scanf(" %c", &dados[codigo].RG);
-		scanf(" %d", &dados[codigo].Telefone);
+		printf("Realizando uma Alteração no cadastro \n");
+		printf("Digite o nome: ");
+		scanf("%s", &dados[codigo].Nome);
+
+		printf("Digite o RG: ");
+		scanf("%s", &dados[codigo].RG);
+
+		printf("Digite o Telefone: ");
+		scanf("%d", &dados[codigo].Telefone);
 		printf("-------------------------------------------------------------- \n");
 		printf("Ação realizada com sucesso \n");
 	}
@@ -59,7 +64,7 @@ int exibe() {
 		printf("--------------------------------------------------------------\n");
 		printf("Exibindo Usuários Cadastrados em Ordem \n");
 		printf("-------------------------------------------------------------- \n");
-		printf("CADASTRO Nº%d", x);
+		printf("CADASTRO Nº%d\n", x);
          printf("NOME: %s\n", dados[x].Nome);
 		 printf("RG: %s\n", dados[x].RG);
 		 printf("TELEFONE: %d\n", dados[x].Telefone);
@@ -82,7 +87,7 @@ int menu() {
 	printf("Digite:  ");
 	scanf("%d", &i);
 	printf("-------------------------------------------------------------- \n");
-	if(i == 1){
+	if(i == 1 && p <=100){
         return cadastro();
 	};
 	if(i == 2){
